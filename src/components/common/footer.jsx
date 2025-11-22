@@ -1,35 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./styles/footer.css";
 
 const Footer = () => {
+	const scrollToSection = (sectionId) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
 	return (
 		<React.Fragment>
 			<div className="footer">
 				<div className="footer-links">
 					<ul className="footer-nav-link-list">
 						<li className="footer-nav-link-item">
-							<Link to="/">Home</Link>
+							<a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
 						</li>
 						<li className="footer-nav-link-item">
-							<Link to="/about">About</Link>
+							<a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a>
 						</li>
 						<li className="footer-nav-link-item">
-							<Link to="/projects">Projects</Link>
+							<a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a>
 						</li>
 						<li className="footer-nav-link-item">
-							<Link to="/articles">Articles</Link>
+							<a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}>Education</a>
 						</li>
 						<li className="footer-nav-link-item">
-							<Link to="/contact">Contact</Link>
+							<a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+						</li>
+						<li className="footer-nav-link-item">
+							<a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
 						</li>
 					</ul>
 				</div>
 
 				<div className="footer-credits">
 					<div className="footer-credits-text">
-						© 2023 Tharindu.dev. All Rights Reserved.
+						© 2025 Sahil. All Rights Reserved.
 					</div>
 				</div>
 			</div>

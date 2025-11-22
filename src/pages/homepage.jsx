@@ -15,13 +15,17 @@ import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
+import Skills from "../components/homepage/skills";
 import AllProjects from "../components/projects/allProjects";
+import Socials from "../components/about/socials";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
+import "./styles/about.css";
+import "./styles/contact.css";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
@@ -82,96 +86,115 @@ const Homepage = () => {
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
-					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
-						</div>
-					</div>
-
-					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
-								</div>
-
-								<div className="subtitle homepage-subtitle">
-									{INFO.homepage.description}
-								</div>
+					{/* HOME SECTION */}
+					<section id="home">
+						<div className="homepage-logo-container">
+							<div style={logoStyle}>
+								<Logo width={logoSize} link={false} />
 							</div>
+						</div>
 
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
+						<div className="homepage-container">
+							<div className="homepage-first-area">
+								<div className="homepage-first-area-left-side">
+									<div className="title homepage-title">
+										{INFO.homepage.title}
+									</div>
+
+									<div className="subtitle homepage-subtitle">
+										{INFO.homepage.description}
+									</div>
+								</div>
+
+								<div className="homepage-first-area-right-side">
+									<div className="homepage-image-container">
+										<div className="homepage-image-wrapper">
+											<img
+												src="home.jpeg"
+												alt="about"
+												className="homepage-image"
+											/>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.stackoverflow}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faStackOverflow}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
+							<div className="homepage-socials">
+								<a
+									href={INFO.socials.twitter}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faTwitter}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.github}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.stackoverflow}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faStackOverflow}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.instagram}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faInstagram}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={`mailto:${INFO.main.email}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faMailBulk}
+										className="homepage-social-icon"
+									/>
+								</a>
+							</div>
 						</div>
+					</section>
 
+					{/* PROJECTS SECTION */}
+					<section id="projects" className="section-spacing">
 						<div className="homepage-projects">
 							<AllProjects />
 						</div>
+					</section>
 
-						<div className="homepage-after-title">
-							<div className="homepage-articles">
+					{/* SKILLS SECTION */}
+					<section id="skills" className="section-spacing">
+						<Skills skills={INFO.skills} />
+					</section>
+
+					{/* EDUCATION SECTION */}
+					<section id="education" className="section-spacing">
+						<div className="title" style={{ marginBottom: '40px', textAlign: 'center' }}>
+							{INFO.articles.title}
+						</div>
+
+						<div className="education-content-wrapper">
+							{/* Education Cards */}
+							<div className="education-cards-section">
 								{myArticles.map((article, index) => (
 									<div
 										className="homepage-article"
@@ -182,20 +205,83 @@ const Homepage = () => {
 											date={article().date}
 											title={article().title}
 											description={article().description}
-											link={"/article/" + (index + 1)}
+											link={null}
 										/>
 									</div>
 								))}
 							</div>
 
-							<div className="homepage-works">
+							{/* Work Experience */}
+							<div className="education-works-section">
 								<Works />
 							</div>
 						</div>
+					</section>
 
-						<div className="page-footer">
-							<Footer />
+					{/* ABOUT SECTION */}
+					<section id="about" className="section-spacing">
+						<div className="about-container">
+							<div className="about-main">
+								<div className="about-right-side">
+									<div className="title about-title">
+										{INFO.about.title}
+									</div>
+
+									<div className="subtitle about-subtitle">
+										{INFO.about.description}
+									</div>
+								</div>
+
+								<div className="about-left-side">
+									<div className="about-image-container">
+										<div className="about-image-wrapper">
+											<img
+												src="about.jpeg"
+												alt="about"
+												className="about-image"
+											/>
+										</div>
+									</div>
+
+									<div className="about-socials">
+										<Socials />
+									</div>
+								</div>
+							</div>
+							<div className="about-socials-mobile">
+								<Socials />
+							</div>
 						</div>
+					</section>
+
+					{/* CONTACT SECTION */}
+					<section id="contact" className="section-spacing">
+						<div className="contact-container">
+							<div className="title contact-title">
+								Let's Get in Touch: Ways to Connect with Me
+							</div>
+
+							<div className="subtitle contact-subtitle">
+								Thank you for your interest in getting in touch with
+								me. I welcome your feedback, questions, and
+								suggestions. If you have a specific question or
+								comment, please feel free to email me directly at
+								&nbsp;{" "}
+								<a href={`mailto:${INFO.main.email}`}>
+									{INFO.main.email}
+								</a>
+							</div>
+						</div>
+
+						<div className="socials-container">
+							<div className="contact-socials">
+								<Socials />
+							</div>
+						</div>
+					</section>
+
+					<div className="page-footer">
+						<Footer />
 					</div>
 				</div>
 			</div>

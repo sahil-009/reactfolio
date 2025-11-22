@@ -1,5 +1,34 @@
 @import "../../data/styles.css";
 
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Section spacing for single-page layout */
+.section-spacing {
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+/* Education Section Layout */
+.education-content-wrapper {
+	display: flex;
+	gap: 40px;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.education-cards-section {
+	flex: 1;
+	max-width: 60%;
+}
+
+.education-works-section {
+	flex: 1;
+	max-width: 40%;
+}
+
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
@@ -94,13 +123,23 @@
 }
 
 @media (max-width: 1024px) {
+	.education-content-wrapper {
+		flex-direction: column;
+	}
+
+	.education-cards-section,
+	.education-works-section {
+		max-width: 100%;
+	}
+
 	.homepage-first-area {
 		flex-direction: column;
 	}
 
 	.homepage-first-area-left-side {
 		display: flex;
-		flex-direction: column; /* Changed: set direction to column */
+		flex-direction: column;
+		/* Changed: set direction to column */
 		align-items: flex-start;
 		width: 100%;
 		order: 2;
