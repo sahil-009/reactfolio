@@ -37,6 +37,27 @@
 	width: 80% !important;
 }
 
+/* Resume button styles */
+.resume-button-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.resume-button {
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 8px 16px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.resume-button:hover {
+	background-color: var(--secondary-color);
+}
+
+
 .about-left-side {
 	display: flex;
 	flex-direction: column;

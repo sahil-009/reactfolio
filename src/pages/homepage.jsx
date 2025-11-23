@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { TypeAnimation } from "react-type-animation";
 import { Helmet } from "react-helmet";
 
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +18,6 @@ import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import Skills from "../components/homepage/skills";
 import AllProjects from "../components/projects/allProjects";
-import Socials from "../components/about/socials";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -98,7 +98,16 @@ const Homepage = () => {
 							<div className="homepage-first-area">
 								<div className="homepage-first-area-left-side">
 									<div className="title homepage-title">
-										{INFO.homepage.title}
+										<TypeAnimation
+											sequence={[
+												INFO.homepage.title,
+												1000,
+											]}
+											wrapper="span"
+											speed={50}
+											style={{ display: 'inline-block' }}
+											repeat={0}
+										/>
 									</div>
 
 									<div className="subtitle homepage-subtitle">
@@ -176,6 +185,14 @@ const Homepage = () => {
 
 					{/* PROJECTS SECTION */}
 					<section id="projects" className="section-spacing">
+						<div className="projects-header" style={{ marginBottom: '40px', marginTop: '50px' }}>
+							<div className="title" style={{ width: '100%', textAlign: 'center', marginBottom: '10px' }}>
+								Projects
+							</div>
+							<div className="subtitle" style={{ width: '100%', textAlign: 'center', marginTop: '0' }}>
+								Here are some of the projects I've worked on.
+							</div>
+						</div>
 						<div className="homepage-projects">
 							<AllProjects />
 						</div>
@@ -188,7 +205,7 @@ const Homepage = () => {
 
 					{/* EDUCATION SECTION */}
 					<section id="education" className="section-spacing">
-						<div className="title" style={{ marginBottom: '40px', textAlign: 'center' }}>
+						<div className="title" style={{ width: '100%', marginBottom: '40px', textAlign: 'center' }}>
 							{INFO.articles.title}
 						</div>
 
@@ -230,6 +247,15 @@ const Homepage = () => {
 									<div className="subtitle about-subtitle">
 										{INFO.about.description}
 									</div>
+
+									<div className="about-hobbies" style={{ marginTop: '20px' }}>
+										<div className="title about-title" style={{ fontSize: '18px', marginBottom: '10px' }}>
+											{INFO.Hobbies.title}
+										</div>
+										<div className="subtitle about-subtitle">
+											{INFO.Hobbies.description}
+										</div>
+									</div>
 								</div>
 
 								<div className="about-left-side">
@@ -242,14 +268,7 @@ const Homepage = () => {
 											/>
 										</div>
 									</div>
-
-									<div className="about-socials">
-										<Socials />
-									</div>
 								</div>
-							</div>
-							<div className="about-socials-mobile">
-								<Socials />
 							</div>
 						</div>
 					</section>
@@ -270,12 +289,6 @@ const Homepage = () => {
 								<a href={`mailto:${INFO.main.email}`}>
 									{INFO.main.email}
 								</a>
-							</div>
-						</div>
-
-						<div className="socials-container">
-							<div className="contact-socials">
-								<Socials />
 							</div>
 						</div>
 					</section>

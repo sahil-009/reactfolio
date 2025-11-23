@@ -1,9 +1,9 @@
 const INFO = {
 	main: {
-		title: "Reactfolio by truethari",
+		title: "Sahil Mund Portfolio",
 		name: "Sahil Mund",
 		email: "smund2302@gmail.com",
-		phone: "+91 63700 08924",
+		phone: "+91 6370008924",
 		logo: "/logo.jpeg",
 	},
 
@@ -17,21 +17,21 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Full Stack Developer & MCA Student",
+		title: "Sahil Mund | Backend Developer",
 		description:
-			"Passionate Full Stack Developer and MCA student with hands-on experience in designing, developing, and deploying scalable web applications and AI-driven solutions. Skilled in modern frameworks, cloud platforms, and DevOps practices with strong problem-solving ability.",
+			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
 	},
 
 	about: {
 		title: "I’m Sahil Mund. I live in Bangalore, India.",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
+			"I've worked on a variety of projects over the years, many of which are open-source. I'm always open to new ideas and feedback.",
 	},
 
 	Hobbies: {
-		title: "I'm passionate about Gym 💪🏼 and motorcycling 🏍️ .",
+		title: "Beyond Coding",
 		description:
-			"I enjoy spending time in the gym and riding my motorcycle..",
+			"When I'm not coding, I'm passionate about hitting the gym 💪🏼 and riding my motorcycle 🏍️.",
 	},
 
 	articles: {
@@ -95,9 +95,9 @@ const INFO = {
 			title: "waste management app react-native",
 			description:
 				"A waste management app that helps users to manage their waste. it s aapp where include resident and worker like saas where user can add their waste and worker can collect it.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+			logo: "/react-native-logo.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/sahil-009/waste-management.git",
 		},
 
 		{

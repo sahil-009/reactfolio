@@ -48,34 +48,37 @@ const About = () => {
 								<div className="subtitle about-subtitle">
 									{INFO.about.description}
 								</div>
-							</div>
 
-							<div className="about-left-side">
-								<div className="about-image-container">
-									<div className="about-image-wrapper">
-										<img
-											src="about.jpeg"
-											alt="about"
-											className="about-image"
-										/>
-									</div>
-								</div>
 
-								<div className="about-socials">
-									<Socials />
-								</div>
 							</div>
 						</div>
-						<div className="about-socials-mobile">
-							<Socials />
+
+						<div className="about-left-side">
+							<div className="about-image-container">
+								<div className="about-image-wrapper">
+									<img
+										src="about.jpeg"
+										alt="about"
+										className="about-image"
+									/>
+								</div>
+							</div>
+
+							<div className="about-socials">
+								<Socials />
+							</div>
 						</div>
 					</div>
-					<div className="page-footer">
-						<Footer />
+					<div className="about-socials-mobile">
+						<Socials />
 					</div>
 				</div>
+				<div className="page-footer">
+					<Footer />
+				</div>
 			</div>
-		</React.Fragment>
+		</div>
+		</React.Fragment >
 	);
 };
 
